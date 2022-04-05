@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import javafx.geometry.Insets?>
+<AnchorPane fx:id="anchorPane" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml">
+    <HBox>
+        <Icon fx:id="favouriteIcon"></Icon>
+        <Label fx:id="mailField" minWidth="300" prefWidth="300" maxWidth="300"><padding>
+            <Insets left="5"/>
+        </padding></Label>
+        <Label fx:id="subject" minWidth="500" prefWidth="500" maxWidth="500"><padding>
+            <Insets left="5"/>
+        </padding></Label>
+        <Label fx:id="mailDate"><padding>
+            <Insets left="5"/>
+        </padding></Label>
+    </HBox>
+</AnchorPane>

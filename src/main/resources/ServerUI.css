@@ -1,0 +1,13 @@
+.root {
+    -fx-base: #1f272f;
+    -fx-color-label-visible: #e2e2e2;
+    -fx-accent: #e7eff7;
+    -fx-default-button: #687571;
+    -fx-focus-color: #efefef;
+    -fx-faint-focus-color: rgba(239, 239, 239, 0.23);
+}
+
+.label {
+    -fx-text-fill: #e2e2e2;
+}
+

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #222;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.UINewMailController">
+   <top>
+      <AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="240.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="1128.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="100.0" text="Da:" textFill="WHITE">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets top="14.0" />
+                           </HBox.margin>
+                        </Label>
+                        <Label fx:id="newMailFrom" contentDisplay="RIGHT" prefHeight="18.0" prefWidth="483.0" textFill="WHITE">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets top="14.0" />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="100.0" text="A:" textFill="WHITE">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets top="12.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="newMailTo" prefHeight="26.0" prefWidth="450.0" promptText="Destinatari">
+                           <HBox.margin>
+                              <Insets top="8.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <Text fx:id="errorTo" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Errore" visible="false" wrappingWidth="429">
+                     <VBox.margin>
+                        <Insets bottom="5.0" left="100.0" top="2.0" />
+                     </VBox.margin>
+                  </Text>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" prefWidth="100.0" text="Oggetto:" textFill="WHITE">
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets top="8.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="newMailSubject" prefWidth="450.0" promptText="Titolo della mail">
+                           <HBox.margin>
+                              <Insets top="4.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                   <Text fx:id="errorSubject" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="Errore" visible="false" wrappingWidth="429.9831129312515">
+                       <VBox.margin>
+                           <Insets bottom="5.0" left="100.0" top="2.0" />
+                       </VBox.margin>
+                   </Text>
+                  <HBox maxHeight="1.7976931348623157E308" maxWidth="-Infinity" prefHeight="175.0" prefWidth="600.0">
+                     <children>
+                        <Button fx:id="actionSend" maxHeight="1.7976931348623157E308" mnemonicParsing="false" prefHeight="100.0" prefWidth="80.0" text="Invia">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="14.0" top="10.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="180.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="newMailBody" layoutX="180.0" layoutY="46.0" prefHeight="183.0" prefWidth="600.0" promptText="Scrivi qui il testo della mail..." AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <Text fx:id="errorBody" fill="RED" nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" visible="false" wrappingWidth="250" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="6.0" />
+            <Text fx:id="newMailLength" fill="WHITE" nodeOrientation="RIGHT_TO_LEFT" strokeType="OUTSIDE" strokeWidth="0.0" text="Lunghezza: 0" wrappingWidth="100" AnchorPane.bottomAnchor="2.0" AnchorPane.rightAnchor="8.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

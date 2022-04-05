@@ -1,0 +1,6 @@
+Mail: a@a.aa
+Ip: localhost
+Port: 8080
+Thread num: 3
+Refresh seconds: 5
+Debug mode: false

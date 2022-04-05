@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane prefHeight="623.0" prefWidth="1236.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Client.Controller.UIController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Label fx:id="actionWrite" prefHeight="25.0" prefWidth="220.0" text="Scrivi un nuovo messaggio">
+                     <graphic>
+                        <Icon content="MODE_EDIT" />
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </graphic>
+            </Menu>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <Label fx:id="actionRefresh" prefHeight="25.0" prefWidth="220.0" text="Scarica nuovi messaggi">
+                     <graphic>
+                        <Icon content="RESTORE" />
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </graphic>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="200.0" prefWidth="160.0" style="-fx-background-color: #222;" BorderPane.alignment="CENTER">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" style="-fx-background-color: #222;">
+               <children>
+                  <ListView fx:id="contentMailList" layoutY="6.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #222;" AnchorPane.bottomAnchor="-6.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="6.0" />
+                  <Label fx:id="noMessagesError" alignment="CENTER" text="Non ci sono messaggi" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <font>
+                        <Font size="49.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+          <AnchorPane fx:id="mailBox" minHeight="0.0" minWidth="0.0" prefHeight="236.0" prefWidth="398.0" style="-fx-background-color: #333;" visible="false">
+               <children>
+                  <MenuBar layoutX="76.0" layoutY="10.0" style="-fx-background-color: #111;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <menus>
+                        <Menu mnemonicParsing="false">
+                           <graphic>
+                              <Label fx:id="actionAnswer" prefHeight="25.0" prefWidth="100.0" text="Rispondi">
+                                 <graphic>
+                                    <Icon content="REPLY" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                      <Menu mnemonicParsing="false">
+                           <graphic>
+                              <Label fx:id="actionAnswerAll" prefHeight="25.0" prefWidth="141.0" text="Rispondi a tutti">
+                                 <graphic>
+                                    <Icon content="REPLY_ALL" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                           </graphic>
+                      </Menu>
+                        <Menu mnemonicParsing="false">
+                           <graphic>
+                              <Label fx:id="actionForward" prefHeight="25.0" prefWidth="81.0" text="Inoltra">
+                                 <graphic>
+                                    <Icon content="OPEN_IN_NEW" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                        <Menu mnemonicParsing="false">
+                           <graphic>
+                              <Label fx:id="actionDelete" prefHeight="25.0" prefWidth="81.0" text="Elimina">
+                                 <graphic>
+                                    <Icon content="DELETE" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                        <Menu fx:id="actionSetFavouriteMenu" mnemonicParsing="false">
+                           <graphic>
+                              <Label fx:id="actionSetFavourite" prefHeight="25.0" prefWidth="93.0" text="Preferito">
+                                 <graphic>
+                                    <Icon fx:id="iconFavuorite" content="STAR">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor></Icon>
+                                 </graphic>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                        <Menu fx:id="actionSetNotSeenMenu" mnemonicParsing="false">
+                           <graphic>
+                              <Label fx:id="actionSetNotSeen" prefHeight="25.0" prefWidth="100.0" text="Non letto">
+                                 <graphic>
+                                    <Icon content="VISIBILITY_OFF" />
+                                 </graphic>
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Label>
+                           </graphic>
+                        </Menu>
+                    </menus>
+                  </MenuBar>
+                  <AnchorPane layoutX="31.0" layoutY="50.0" prefHeight="55.0" prefWidth="1034.0" style="-fx-background-color: #222;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="27.0">
+                     <children>
+                        <VBox layoutX="34.0" layoutY="-45.0" prefHeight="90.0" prefWidth="75.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="959.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label alignment="CENTER_RIGHT" contentDisplay="RIGHT" minWidth="53.0" prefHeight="18.0" prefWidth="53.0" text="Da:" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" minWidth="53.0" prefHeight="18.0" prefWidth="53.0" text="Oggetto:" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" minWidth="53.0" prefHeight="18.0" prefWidth="53.0" text="A:" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label alignment="CENTER_RIGHT" minWidth="53.0" prefHeight="18.0" prefWidth="53.0" text="Data:" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox layoutX="149.0" layoutY="-26.0" prefHeight="90.0" prefWidth="959.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <Label fx:id="contentFrom" prefHeight="18.0" prefWidth="603.0" text="CC" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="contentSubject" prefHeight="18.0" prefWidth="637.0" text="BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="contentTo" prefHeight="18.0" prefWidth="678.0" text="AAAAAAAAAAAA" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                              <Label fx:id="contentDate" prefHeight="18.0" prefWidth="678.0" text="AAAAAAAAAAAA" textFill="WHITE">
+                                 <VBox.margin>
+                                    <Insets left="10.0" top="10.0" />
+                                 </VBox.margin>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <TextArea fx:id="contentBody" editable="false" layoutY="149.0" prefHeight="144.0" prefWidth="1034.0" text="aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaa aaaaaaaaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaa aaaaaaaaaaaaaaaaaaa aaaaaa" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="149.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </center>
+   <left>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #111;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="378.0" prefWidth="283.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label fx:id="actionReceived" prefHeight="18.0" prefWidth="200.0" styleClass="mylabel" text="Messaggi Ricevuti" textFill="WHITE">
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <graphic>
+                        <Icon content="DRAFTS" />
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" top="20.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="actionNotSeen" prefHeight="18.0" prefWidth="200.0" styleClass="mylabel" text="Non letti" textFill="WHITE">
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <graphic>
+                        <Icon content="MARKUNREAD" />
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="actionFavourite" prefHeight="18.0" prefWidth="200.0" styleClass="mylabel" text="Preferiti" textFill="WHITE">
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <graphic>
+                        <Icon content="STARS" />
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="actionSent" prefHeight="18.0" prefWidth="200.0" styleClass="mylabel" text="Messaggi inviati" textFill="WHITE">
+                     <padding>
+                        <Insets left="20.0" right="20.0" />
+                     </padding>
+                     <graphic>
+                        <Icon content="NEAR_ME" />
+                     </graphic>
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="15.0" />
+                     </VBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+            </VBox>
+            <Text fx:id="errorMsg" disable="true" fill="#d30f0f" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="170.9830722808838" AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="15.0" />
+            <Text fx:id="successMsg" disable="true" fill="#24d824" lineSpacing="5.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="170.9830722808838" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="15.0" />
+         </children>
+      </AnchorPane>
+   </left>
+</BorderPane>

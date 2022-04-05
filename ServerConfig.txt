@@ -1,0 +1,11 @@
+Server storage folder: serverData
+User storage folder: userData
+Server user list filename: storage.obj
+User recieved messages list filename: receivedMessages.csv
+User sent messages list filename: sentMessages.csv
+User mails storage folder: mailStorage
+Log file name: logfile.txt
+Server port: 8080
+Server pool second timeout: 10
+Thread pool number: 5
+Server mail id filename: mailId.txt
